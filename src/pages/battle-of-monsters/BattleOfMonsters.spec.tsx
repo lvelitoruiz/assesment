@@ -10,6 +10,8 @@ const battleOfMonstersFactory = async () => {
     mockFetch.mockResponse(req => {
         if (req.url.includes('monsters')) {
             return Promise.resolve(JSON.stringify(monstersData.monsters))
+        } else if(req.url.includes('battle')) {
+            return Promise.resolve(JSON.stringify(monstersData.monsters[0]))
         }
 
         return Promise.reject(new Error('not mapped url'))
@@ -47,7 +49,11 @@ describe('BattleOfMonsters', () => {
     it('should start fight after click on button', async () => {
         await battleOfMonstersFactory()
         expect(screen.getByTestId('monster-1')).toBeInTheDocument()
-        await act(() => screen.getByTestId('monster-1').click())
-        await act(() => screen.getByTestId('start-battle-button').click())
+        await act(async () => {
+            screen.getByTestId('monster-1').click();
+            screen.getByTestId('start-battle-button').click();
+            
+            await Promise.resolve();
+          });
     })
 })

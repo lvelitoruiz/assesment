@@ -53,10 +53,13 @@
   },
   "devDependencies": {
     "@testing-library/user-event": "^14.2.1",
+    "autoprefixer": "^10.4.14",
     "eslint-config-prettier": "^8.5.0",
     "jest-fetch-mock": "^3.0.3",
     "json-server": "^0.17.0",
+    "postcss": "^8.4.24",
     "prettier": "^2.7.1",
+    "tailwindcss": "^3.3.2",
     "ts-jest": "^28.0.7",
     "ts-node": "^10.9.1"
   },
@@ -68,7 +71,7 @@
     ]
   },
   "engines": {
-    "npm" : ">=7.0.0 <9.0.0",
+    "npm": ">=7.0.0 <9.0.0",
     "yarn": ">=1.22.0",
     "node": ">=16.10.0 <17.0.0"
   }

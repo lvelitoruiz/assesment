@@ -44,5 +44,6 @@ export const MonsterName = styled(Typography)(() => ({
 export const MonstersSection = styled.section(() => ({
   marginTop: '20px',
   display: 'flex',
-  gap: '16px'
+  gap: '16px',
+  justifyContent: "space-around"
 }))
